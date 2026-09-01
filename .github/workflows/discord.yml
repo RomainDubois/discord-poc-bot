@@ -3,6 +3,10 @@ name: Discord Bot
 on:
   workflow_dispatch:
 
+
+  schedule:
+    - cron: "* * * * *"
+
 jobs:
   discord:
     runs-on: ubuntu-latest
