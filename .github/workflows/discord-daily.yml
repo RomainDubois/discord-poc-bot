@@ -2,7 +2,7 @@ name: Discord Bot
 
 on:
   schedule:
-    - cron: "47 * * * *"
+    - cron: "23 8 * * *"
   workflow_dispatch:
 
 jobs:
@@ -20,4 +20,4 @@ jobs:
           DISCORD_OUT_CHANNEL_ID: ${{ secrets.DISCORD_OUT_CHANNEL_ID }}
         run: |
           chmod +x exec.sh
-          ./exec.sh hourly
+          ./exec.sh daily

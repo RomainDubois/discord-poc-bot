@@ -4,7 +4,7 @@ content="Hello depuis mon bot:
 ${msg}"
 
 jq -n \
-  --arg content "$content" \
+  --arg content "$1 - $content" \
   '{content: $content}' |
 curl -X POST \
   -H "Authorization: Bot $DISCORD_BOT_TOKEN" \
