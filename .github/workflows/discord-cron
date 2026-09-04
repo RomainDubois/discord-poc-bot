@@ -1,0 +1,21 @@
+name: Discord Bot - external
+
+on:
+  workflow_dispatch:
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run Discord script
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_IN_CHANNEL_ID: ${{ secrets.DISCORD_IN_CHANNEL_ID }}
+          DISCORD_OUT_CHANNEL_ID: ${{ secrets.DISCORD_OUT_CHANNEL_ID }}
+        run: |
+          chmod +x exec.sh
+          ./exec.sh external
